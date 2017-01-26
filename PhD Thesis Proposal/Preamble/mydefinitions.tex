@@ -1,0 +1,47 @@
+%----------------------------------------------------------------------------------------
+%	VALUES FOR THE THESIS
+%----------------------------------------------------------------------------------------
+
+\newcommand{\name}{Jeremie Gillet} % Author name
+\newcommand{\thesistitle}{\LaTeX\ thesis proposal template} % Title of the thesis
+\newcommand{\submissiondate}{January, 2017} % Submission date "Month, year"
+\newcommand{\supervisor}{S.~Upervisor} % Supervisor name
+\newcommand{\cosupervisor}{C.~O'Supervisor} % Co-Supervisor name, comment this line if there is none
+
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY STYLE (pick the style you want)
+%----------------------------------------------------------------------------------------
+
+\usepackage[square, numbers, sort&compress]{natbib} % for bibliography - Square brackets, citing references with numbers, citations sorted by appearance in the text and compressed (as in [4-7])
+%\usepackage[longnamesfirst,round]{natbib} % Natural Sciences bibliography
+
+\bibliographystyle{Preamble/physics_bibstyle} % You may use a different style adapted to your field
+%\bibliographystyle{unsrtnat} % You may use a different style adapted to your field
+
+
+%----------------------------------------------------------------------------------------
+%	YOUR PACKAGES (be careful of package interaction)
+%----------------------------------------------------------------------------------------
+
+\usepackage{amsthm,amsmath,amssymb,amsfonts,bbm}% Math symbols
+
+%----------------------------------------------------------------------------------------
+%	YOUR DEFINITIONS AND COMMANDS
+%----------------------------------------------------------------------------------------
+
+% New Commands
+\newcommand{\bea}{\begin{eqnarray}} % Shortcut for equation arrays
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\e}[1]{\times 10^{#1}}  % Powers of 10 notation
+
+% Defining a theorem box for Criteria
+\newtheorem{critere}{Criterion}
+\newcommand{\crit}[2]{
+\begin{center}  
+\fbox{ \begin{minipage}[c]{0.9 \textwidth}
+\begin{critere}
+\textbf{\textup{ #1}} --- #2
+\end{critere}
+\end{minipage}  } \end{center}
+}
