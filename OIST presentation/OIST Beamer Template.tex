@@ -27,9 +27,9 @@
 \usecolortheme[named=OISTcolor]{structure}
 
 \setbeamertemplate{navigation symbols}{} % No navigation symbols
- \setbeamertemplate{footline} % Only page number at the bottom   {\begin{minipage}{119.7mm} \vspace{-7 mm} \hfill \insertframenumber \end{minipage} \hspace{0.8mm}
-     \begin{minipage}{5mm}  \vspace{-7 mm} \inserttotalframenumber  \end{minipage}}
-}
+ \setbeamertemplate{footline} % Only page number at the bottom
+   {\begin{minipage}{125mm} \vspace{-3 mm} \hfill \insertframenumber \end{minipage}}
+ }
 
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
@@ -39,23 +39,24 @@
 %	TITLE PAGE
 %----------------------------------------------------------------------------------------
 
-\title[Short title]{\color{black} Presentation Title} % The short title appears at the bottom of every slide, the full title is only on the title page
+\title[Short title]{\color{black} Presentation Title}
 \subtitle{ \color{black}
-Presentation venue/Date}
+Presentation venue/Date 
+\vspace*{-5mm}}
 
 \author{Author name} % Your name
 \date{} % Date, leave empty
 
 \begin{document}
 
-\setbeamertemplate{background}{\includegraphics[width=\paperwidth]{title}} % Adding the background logo for the title page
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth]{title.png}} % Adding the background logo for the title page
 
 \begin{frame}[plain]
-\vspace*{1.7cm}
+\vspace*{1.6cm}
 \titlepage % Print the title page as the first slide
 \end{frame}
 
-\setbeamertemplate{background}{\includegraphics[width=\paperwidth, trim=0 0 0 -40 ]{background}} % Adding the background logo for the rest of the slides
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth, trim=0 0 0 -700 ]{footer.png}} % Adding the background logo for the rest of the slides
 
 \begin{frame}
 \frametitle{Overview} % Table of contents slide, comment this block out to remove it
