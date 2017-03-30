@@ -19,23 +19,26 @@
 
 \documentclass[8pt]{beamer}
 
+\usepackage{graphicx} % Allows to include images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+
 \mode<presentation> {
 
 \usetheme{default}
 \definecolor{OISTcolor}{rgb}{0.65,0.16,0.16}
-\usecolortheme[named=black]{structure}
-\setbeamertemplate{itemize item}{\color{black}$\bullet$}
 
-\usepackage{helvet} % Helvetica Font
+%\usecolortheme[named=OISTcolor]{structure} % Use this line for OIST colors
+\usecolortheme[named=black]{structure} % Black titles and such
+
+\setbeamertemplate{itemize item}{\color{black}$\bullet$} % Comment this line for default bullet points (colored triangles)
+
+\usepackage{helvet} % Helvetica Font 
 \renewcommand{\familydefault}{\sfdefault}
 
 \setbeamertemplate{navigation symbols}{} % No navigation symbols
- \setbeamertemplate{footline} % Only page number at the bottom
-   {\begin{minipage}{125mm} \vspace{-3 mm} \hfill \insertframenumber \end{minipage}}
+\setbeamertemplate{footline} % Only page number at the bottom
+ {\begin{minipage}{125mm} \vspace{-3 mm} \hfill \insertframenumber \end{minipage}}
  }
-
-\usepackage{graphicx} % Allows including images
-\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
@@ -47,14 +50,15 @@ Presentation venue/Date
 }
 
 \author{} % Your name
-\date{} % Date, leave empty
+\date{} % Date, leave empty, use subtitle instead
 
 \begin{document}
 
 \setbeamertemplate{background}{\includegraphics[width=\paperwidth]{title.png}} % Adding the background logo for the title page
 
 \begin{frame}[plain]
-\vspace*{1.55cm}
+\vspace*{1.55cm} % Use this spacing if author field is empty
+%\vspace*{5mm}  % Use this spacing if author field is used
 \titlepage % Print the title page as the first slide
 \end{frame}
 
