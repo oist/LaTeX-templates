@@ -22,12 +22,12 @@
 \mode<presentation> {
 
 \usetheme{default}
+\definecolor{OISTcolor}{rgb}{0.65,0.16,0.16}
+\usecolortheme[named=black]{structure}
+\setbeamertemplate{itemize item}{\color{black}$\bullet$}
+
 \usepackage{helvet} % Helvetica Font
 \renewcommand{\familydefault}{\sfdefault}
-
-\definecolor{OISTcolor}{rgb}{0.65,0.16,0.16}
-\usecolortheme[named=OISTcolor]{structure}
-\setbeamercolor{frametitle}{fg=black}
 
 \setbeamertemplate{navigation symbols}{} % No navigation symbols
  \setbeamertemplate{footline} % Only page number at the bottom
@@ -161,20 +161,20 @@ $E = mc^2$
 \end{theorem}
 \end{frame}
 
-%------------------------------------------------
-
-\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
-\frametitle{Verbatim}
-\begin{example}[Theorem Slide Code]
-\begin{verbatim}
-\begin{frame}
-\frametitle{Theorem}
-\begin{theorem}[Mass--energy equivalence]
-$E = mc^2$
-\end{theorem}
-\end{frame}\end{verbatim}
-\end{example}
-\end{frame}
+%%------------------------------------------------
+%
+%\begin{frame}[fragile] % Need to use the fragile option when verbatim is used in the slide
+%\frametitle{Verbatim}
+%\begin{example}[Theorem Slide Code]
+%\begin{verbatim}
+%\begin{frame}
+%\frametitle{Theorem}
+%\begin{theorem}[Mass--energy equivalence]
+%$E = mc^2$
+%\end{theorem}
+%\end{frame}\end{verbatim}
+%\end{example}
+%\end{frame}
 
 %------------------------------------------------
 
