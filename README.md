@@ -3,6 +3,7 @@ Graduate School LaTeX templates for:
 * Lab Rotation Proposal
 * Lab Rotation Report
 * OIST presentation
+* OIST Dark presentation
 * PhD Thesis Proposal
 * PhD Thesis
 
