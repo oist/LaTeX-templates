@@ -25,11 +25,10 @@
 \mode<presentation> {
 
 \usetheme{default}
-\definecolor{OISTblack}{rgb}{0.137,0.094,0.082}
 
 \usecolortheme[named=white]{structure} % White titles and such
 \setbeamercolor{normal text}{fg=white} % White text
-\setbeamercolor{background canvas}{bg=OISTblack} % Black background
+\setbeamercolor{background canvas}{bg=black} % Black background
 
 \setbeamertemplate{itemize item}{\color{white}$\bullet$} % Comment this line for default bullet points (triangles)
 
@@ -63,7 +62,7 @@ Presentation venue/Date
 \titlepage % Print the title page as the first slide
 \end{frame}
 
-\setbeamertemplate{background}{\vspace{\fill} \includegraphics[width=\paperwidth, trim = 0 0 0 -35]{background.png}} % Adding the background logo for the rest of the slides
+\setbeamertemplate{background}{\includegraphics[width=\paperwidth]{background.png}} % Adding the background logo for the rest of the slides
 
 \begin{frame}
 \frametitle{Overview} % Table of contents slide, comment this block out to remove it
