@@ -36,6 +36,7 @@
 	\lhead{\bfseries \leftmark}}% Header
 \newcommand{\unnumberedchapter}[1]{ % Preparation for unnumbered chapters
 	\cleardoublepage % To make sure the previous headers are passed
+	\phantomsection % To help hyperref link to the right page
 	\addcontentsline{toc}{chapter}{#1} % Also adds the chapter name to the Contents
 	\lhead{\bfseries #1}}% Header
 

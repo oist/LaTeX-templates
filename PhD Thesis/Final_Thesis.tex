@@ -33,6 +33,7 @@
 	\fancyhead[LO]{{\bfseries \rightmark}}}% Headers for right pages
 \newcommand{\unnumberedchapter}[1]{ % Preparation for unnumbered chapters
 	\cleardoublepage % To make sure the previous headers are passed
+	\phantomsection % To help hyperref link to the right page
 	\addcontentsline{toc}{chapter}{#1} % Also adds the chapter name to the Contents
 	\fancyhead[RE]{{\bfseries #1}} % Headers for left pages
 	\fancyhead[LO]{}}%Headers for right pages
