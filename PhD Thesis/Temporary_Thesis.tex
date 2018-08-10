@@ -11,9 +11,9 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS (do not modify)
+%-------------------------------------------------------------------------------
 
 \documentclass[12pt, oneside]{book} % 12 pt font, one-sided book style
 \usepackage[a4paper, includehead, headheight=0.6cm, inner=2.5cm ,outer=2.5cm, top=2.5 cm, bottom=2.5cm]{geometry}  % Changing size of document
@@ -52,20 +52,21 @@
 
 \usepackage{hyperref} % Adds clickable links at references
 
-%----------------------------------------------------------------------------------------
-%	ADD YOUR CUSTOM VALUES, COMMANDS AND PACKAGES
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%	CUSTOM VALUES, COMMANDS AND PACKAGES (NOT IN THIS FILE)
+%-------------------------------------------------------------------------------
 
-% Open Preamble/mydefinitions.tex and enter some values (name, thesis title...) 
-% and include your own custom LaTeX functions and packages
+% Open Preamble/mydefinitions.tex and enter some values (name, thesis title...)
+% also include your own custom LaTeX functions and packages
+% DO NOT add your packages here to ensure the temporary and final thesis use the same packages
 
 \input{Preamble/mydefinitions}
 
 \begin{document}
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	TITLE PAGE
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \pagestyle{empty} % No page numbers
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the preamble pages
@@ -83,16 +84,16 @@
 \hfill  by\\[1cm]
 \hfill  {\large \bfseries\name}\\
 \vfill
-{\hfill \large Supervisor: \textbf{\supervisor}} \\ 
+{\hfill \large Supervisor: \textbf{\supervisor}} \\
 \ifx\cosupervisor\undefined\else{\hfill \large Co-Supervisor: \textbf{\cosupervisor}} \\ \fi
 \vspace{1cm}
 \hfill  \submissiondate
 \end{center}
 \end{titlepage}
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	PREAMBLE PAGES (delete unnecessary pages)
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \pagestyle{fancy} % Change the header style
 \fancyhf{}% Clear header and footer
@@ -110,9 +111,9 @@
 \input{Preamble/nomenclature}
 \input{Preamble/dedication}
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \unnumberedchapter{Contents}
 \tableofcontents % Write out the Table of Contents
@@ -121,9 +122,9 @@
 \unnumberedchapter{List of Tables}
 \listoftables % Write out the List of Tables
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	THESIS MAIN TEXT
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 \mainmatter % Begin numeric (1,2,3...) page numbering
@@ -133,36 +134,36 @@
 
 \numberedchapter % Regular chapters following
 \input{MainText/chapter1} % Input your chapters here
-\input{MainText/chapter2} 
-\input{MainText/chapter3} 
-%\input{MainText/chapter4} 
-%\input{MainText/chapter5} 
+\input{MainText/chapter2}
+\input{MainText/chapter3}
+%\input{MainText/chapter4}
+%\input{MainText/chapter5}
 
 \unnumberedchapter{Conclusion} % Title of the unnumbered chapter
 \input{MainText/conclusion} % Conclusion (unnumbered)
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	APPENDICES
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
-\appendix 
+\appendix
 
 \numberedchapter % Regular chapters following
 \input{MainText/appendixA}
 \input{MainText/appendixB}
 %\input{MainText/appendixC}
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 \unnumberedchapter{Bibliography} % Title of the unnumbered chapter
 \bibliography{Preamble/Thesis_bibliography} % The references information are stored in the file named "Thesis_bibliography.bib"
 
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 %	PUBLISHED ARTICLES - ONLY INCLUDE PDF FILES HERE
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 \unnumberedchapter{Published articles} % Title of the unnumbered chapter
@@ -172,4 +173,4 @@
 %\includepdf[pages=-, offset=0.54cm \voffset]{./Images/papers/paper2.pdf} % Includes pdf
 %\includepdf[pages=-, offset=0.54cm \voffset]{./Images/papers/paper3.pdf} % Includes pdf
 
-\end{document}  
+\end{document}
