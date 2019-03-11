@@ -577,7 +577,7 @@ FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
 %  new.block
-%  format.title "title"  output.check   % Affiche titre 
+  format.title "title"  output.check   % Affiche titre 
 %  new.block
   crossref missing$
 %    { journal output
