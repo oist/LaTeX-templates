@@ -10,7 +10,7 @@ The main folder contains three folders detailed here:
 
 \item \textbf{Images.} This folder should contain all the images that you will use in your thesis. It can contain subfolders, for example one for each chapter. To include an image from the main text, use something like \texttt{\textbackslash includegraphics\{subfolder/image.jpg\} } without worrying about the \texttt{Images} path.
 
-\item \textbf{MainText.} This folder contains a series of \LaTeX\ files that form the main text: introduction, chapters, conclusion and appendices. The introduction and conclusion as they are now are not numbered, which creates a few difficulties with the headers of the thesis. Those are solved by including the commands \texttt{\textbackslash unnumberedchapter\{\}} and \texttt{\textbackslash numberedchapter} before including the files in \texttt{xxx\_Thesis.tex}. If you want the introduction and conclusion to be numbered, re-write and treat them as regular chapters.
+\item \textbf{MainText.} This folder contains a series of \LaTeX\ files that form the main text: introduction, chapters, conclusion, appendices and published articles. The introduction and conclusion as they are now are not numbered, which creates a few difficulties with the headers of the thesis. Those are solved by including the commands \texttt{\textbackslash unnumberedchapter\{\}} and \texttt{\textbackslash numberedchapter} before including the files in \texttt{xxx\_Thesis.tex}. If you want the introduction and conclusion to be numbered, re-write and treat them as regular chapters.
 
 \item \textbf{Preamble.} This folder contains a series of \LaTeX\ files with the pages that will appear before the main text. Please write (or copy and paste) your own text in those files and delete the dummy text when appropriate. The files are:
 \begin{itemize}
@@ -28,11 +28,11 @@ The main folder contains three folders detailed here:
 
 \end{itemize}
 
-\section{\texttt{Temporary\_Thesis.tex} and  \texttt{Final\_Thesis.tex}}
+\section{\texttt{Thesis.tex}}
 
-Those are the main files, the only ones that need to be compiled to build the thesie. Compile once with \LaTeX, once with BibTeX and finally twice with \LaTeX\ to get all the references right.
+This is the main file, the only one that needs to be compiled to build the thesis. Compile once with \LaTeX, once with BibTeX and finally twice with \LaTeX\ to get all the references right. At the top of this file, you can see \verb|\documentclass[final]{oist_thesis}|. When you submit a final version, do not modify it. When you submit a temporary version to the graduate school, use \verb|\documentclass{oist_thesis}| instead.
 
-Let's go through each section and comment them briefly. The last section will emphasize the differences between the two files.
+Let's go through each section and comment them briefly. The last section will emphasize the differences between PDF files compiled with \verb|\documentclass{oist_thesis}| and \verb|\documentclass[final]{oist_thesis}|.
 
 \subsection{PACKAGES AND OTHER DOCUMENT CONFIGURATIONS}
 
@@ -72,13 +72,13 @@ Builds the bibliography. The style of the bibliography can be defined in \texttt
 
 This last section add the PDF files of your previously published articles (or about to be published) to the thesis. You should only include PDF files provided by the publishing journal. This is strictly for the examiners' convenience in the temporary bound thesis, as for copyright reasons these files may not be published in the final version of the thesis.
 
-\subsection{Differences between \texttt{Temporary\_Thesis.tex} and  \texttt{Final\_Thesis.tex}}
+\subsection{Differences between a temporary version and final version}
 
-There are two main differences between the two versions. 
+There are two main differences between PDF files compiled with \verb|\documentclass{oist_thesis}| and \verb|\documentclass[final]{oist_thesis}|. 
 
-The first difference is that the final version does not contain the published articles for copyright reasons. 
+The first difference is that the final version (\verb|\documentclass[final]{oist_thesis}|) does not contain the published articles for copyright reasons. 
 
-The second difference is in the document style: page size, header and line spacing are different This might create small issues, such as page breaking with large tables, images or captions, when compiling the same content with the two \texttt{xxx\_Thesis.tex} files.
+The second difference is in the document style: page size, header and line spacing are different This might create small issues, such as page breaking with large tables, images or captions, when compiling the same content.
 
 
 

@@ -50,6 +50,8 @@
 		\setcounter{page}{2} % Include the title page in page counting
 		\thesisspacing % Double spacing
 	}
+
+	\newcommand{\includepublications}{}
 \else
 	\LoadClass[12pt, oneside]{book} % 12 pt font, one-sided book style
 	
@@ -79,5 +81,9 @@
 		\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the preamble pages
 		\setcounter{page}{2} % Include the title page in page counting
 		\thesisspacing % Double spacing
+	}
+
+	\newcommand{\includepublications}{
+		\input{./MainText/publications}
 	}
 \fi

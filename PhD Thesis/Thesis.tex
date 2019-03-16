@@ -15,7 +15,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS (do not modify)
 %-------------------------------------------------------------------------------
 
-\documentclass{oist_thesis} % use \documentclass[final]{oist_thesis} for a final version
+\documentclass[final]{oist_thesis} % use \documentclass[final]{oist_thesis} for a final version
 \usepackage[english]{babel} % The document is in English
 \usepackage[utf8]{inputenc} % UTF8 encoding
 \usepackage[T1]{fontenc} % Font encoding
@@ -148,12 +148,6 @@
 %	PUBLISHED ARTICLES - ONLY INCLUDE PDF FILES HERE
 %-------------------------------------------------------------------------------
 
-\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
-\unnumberedchapter{Published articles} % Title of the unnumbered chapter
-\chapter*{Published articles} % Starts a chapter which will remain empty
-
-\includepdf[pages=-, offset=0.54cm \voffset]{./Images/papers/ch01_who-we-are_en_20151028_cl.pdf} % Includes pdf
-%\includepdf[pages=-, offset=0.54cm \voffset]{./Images/papers/paper2.pdf} % Includes pdf
-%\includepdf[pages=-, offset=0.54cm \voffset]{./Images/papers/paper3.pdf} % Includes pdf
+\includepublications
 
 \end{document}
