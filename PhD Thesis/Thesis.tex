@@ -1,9 +1,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% OIST Doctoral Thesis - Final bound version
+% OIST Doctoral Thesis - Temporary bound version
 % LaTeX Template
 % Version 0.2 (2016/04/06)
 %
-% This version is the final binding version which will be published.
+% This version is the temporary binding version which will be submitted to the thesis examiners.
+% Many features (such as double spacing) are meant for the examiners' convenience, do not modify them.
 %
 % Original author:
 % Jeremie Gillet
@@ -11,11 +12,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %-------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS (do not modify)
 %-------------------------------------------------------------------------------
 
-\documentclass[12pt, twoside]{book} % 12 pt font, two-sided book style
-\usepackage[a4paper, includehead, headheight=0.6cm, inner=3cm ,outer=2.5cm, top=2.5 cm, bottom=2.5cm]{geometry}  % Changing size of document
+\documentclass{oist_thesis} % use \documentclass[final]{oist_thesis} for a final version
 \usepackage[english]{babel} % The document is in English
 \usepackage[utf8]{inputenc} % UTF8 encoding
 \usepackage[T1]{fontenc} % Font encoding
@@ -24,21 +24,10 @@
 \graphicspath{{./Images/}} % Specifies the directory where pictures are stored
 
 \usepackage{longtable} % tables that can span several pages
-\usepackage[bf]{caption} % caption: FIG in bold
+
+\usepackage{pdfpages} % If you want to include a pdf file of your published paper as an appendix
+
 \usepackage{fancyhdr} % For the headers
-
-\newcommand{\numberedchapter}{ % Preparation for numbered chapters
-	\cleardoublepage % To make sure the previous headers are passed
-	\fancyhead[RE]{{\bfseries \leftmark}}% Headers for left pages
-	\fancyhead[LO]{{\bfseries \rightmark}}}% Headers for right pages
-\newcommand{\unnumberedchapter}[1]{ % Preparation for unnumbered chapters
-	\cleardoublepage % To make sure the previous headers are passed
-	\phantomsection % To help hyperref link to the right page
-	\addcontentsline{toc}{chapter}{#1} % Also adds the chapter name to the Contents
-	\fancyhead[RE]{{\bfseries #1}} % Headers for left pages
-	\fancyhead[LO]{}}%Headers for right pages
-
-\usepackage{emptypage} % No headers on an empty page
 
 \usepackage{eso-pic} % For the background picture on the title page
 \newcommand\BackgroundPic{%
@@ -92,14 +81,10 @@
 \end{titlepage}
 
 %-------------------------------------------------------------------------------
-%	PREAMBLE PAGES (comment out unnecessary pages)
+%	PREAMBLE PAGES (delete unnecessary pages)
 %-------------------------------------------------------------------------------
 
-\pagestyle{fancy} % Changes the headers
-\renewcommand{\chaptermark}[1]{ \markboth{#1}{}} % Getting the chapter name right
-\renewcommand{\sectionmark}[1]{\markright{\thesection\; #1}} % Getting the section name right
-\fancyhf{}% Clears header and footer
-\fancyhead[RO,LE]{\thepage} % page number on the outside of headers
+\startpreamble
 
 \input{Preamble/declaration}
 \input{Preamble/abstract}
@@ -121,7 +106,7 @@
 \listoftables % Write out the List of Tables
 
 %-------------------------------------------------------------------------------
-%	THESIS MAIN TEXT - CHAPTERS
+%	THESIS MAIN TEXT
 %-------------------------------------------------------------------------------
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
@@ -130,25 +115,23 @@
 \unnumberedchapter{Introduction} % Title of the unnumbered chapter
 \input{MainText/introduction} % Introduction (unnumbered)
 
-\numberedchapter
-\input{MainText/chapter1} % Import your chapters here
+\numberedchapter % Regular chapters following
+\input{MainText/chapter1} % Input your chapters here
 \input{MainText/chapter2}
 \input{MainText/chapter3}
 %\input{MainText/chapter4}
 %\input{MainText/chapter5}
 
-% Unnumbered chapters (for example conclusion) - Comment if unnecessary
 \unnumberedchapter{Conclusion} % Title of the unnumbered chapter
-\input{MainText/conclusion}% Conclusion (unnumbered)
+\input{MainText/conclusion} % Conclusion (unnumbered)
 
 %-------------------------------------------------------------------------------
 %	APPENDICES
 %-------------------------------------------------------------------------------
-
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
-\appendix % Starts of appendices
+\appendix
 
-\numberedchapter
+\numberedchapter % Regular chapters following
 \input{MainText/appendixA}
 \input{MainText/appendixB}
 %\input{MainText/appendixC}
@@ -161,5 +144,16 @@
 \unnumberedchapter{Bibliography} % Title of the unnumbered chapter
 \bibliography{Preamble/Thesis_bibliography} % The references information are stored in the file named "Thesis_bibliography.bib"
 
+%-------------------------------------------------------------------------------
+%	PUBLISHED ARTICLES - ONLY INCLUDE PDF FILES HERE
+%-------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+\unnumberedchapter{Published articles} % Title of the unnumbered chapter
+\chapter*{Published articles} % Starts a chapter which will remain empty
+
+\includepdf[pages=-, offset=0.54cm \voffset]{./Images/papers/ch01_who-we-are_en_20151028_cl.pdf} % Includes pdf
+%\includepdf[pages=-, offset=0.54cm \voffset]{./Images/papers/paper2.pdf} % Includes pdf
+%\includepdf[pages=-, offset=0.54cm \voffset]{./Images/papers/paper3.pdf} % Includes pdf
 
 \end{document}
