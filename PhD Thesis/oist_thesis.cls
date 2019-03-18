@@ -7,7 +7,7 @@
 % last revision: March 2019
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{oistthesis}[2019/3/17 OIST thesis submission class]
+\ProvidesClass{oist_thesis}[2019/3/17 OIST thesis submission class]
 
 \newif\if@final\@finaltrue
 \DeclareOption{temporary}{\@finalfalse}
@@ -15,6 +15,7 @@
 
 \ProcessOptions\relax
 
+% handling version of the thesis
 \RequirePackage{setspace} % For using double spacing
 
 \if@final
@@ -86,3 +87,54 @@
 		\input{./MainText/publications}
 	}
 \fi
+
+% ----- For \maketitle -----
+\RequirePackage{graphicx} % For including images
+\RequirePackage{eso-pic} % For the background picture on the title page
+\newcommand\BackgroundPic{%
+	\put(-250,-160){%
+		\parbox[b][\paperheight]{\paperwidth}{%
+			\vfill
+			\centering
+			\includegraphics[width=\paperwidth]{./Images/symbol.jpg}%
+			\vfill
+}}}
+
+% handling keyword options.
+\RequirePackage{xkeyval}
+
+\newif\if@cosupervisorexist\@cosupervisorexistfalse
+\define@key[OIST]{title}{title}{\def\title@title{#1}}
+\define@key[OIST]{title}{name}{\def\title@name{#1}}
+\define@key[OIST]{title}{supervisor}{\def\title@supervisor{#1}}
+\define@key[OIST]{title}{cosupervisor}{\def\title@cosupervisor{#1}\@cosupervisorexisttrue}
+\define@key[OIST]{title}{submissiondate}{\def\title@submissiondate{#1}}
+
+\providecommand{\puttitle}{}
+\renewcommand{\puttitle}[1]{
+	\@puttitle{}{#1}
+}
+
+\providecommand{\@puttitle}{}
+\renewcommand{\@puttitle}[2]{%
+	\setkeys[OIST]{title}{#2}
+	\begin{titlepage}
+		\AddToShipoutPicture*{\BackgroundPic}
+		\begin{center}
+			\vfill
+			{\large \scshape Okinawa Institute of Science and Technology\\Graduate University}\\[0.7cm]
+			{\large Thesis submitted for the degree }\\[0.7cm]
+			{\Large Doctor of Philosophy}\\[0.5cm]
+			\rule{\textwidth}{1.5pt}\\[0cm]
+			{\huge \bfseries \title@title \par \ }\\[-0.5cm]
+			\rule{\textwidth}{1.5pt}\\[2.5cm]
+			\hfill  by\\[1cm]
+			\hfill  {\large \bfseries\title@name}\\
+			\vfill
+			{\hfill \large Supervisor: \textbf{\title@supervisor}} \\
+			\if@cosupervisorexist{\hfill \large Co-Supervisor: \textbf{\title@cosupervisor} \\}\else\fi
+			\vspace{1cm}
+			\hfill  \title@submissiondate
+		\end{center}
+	\end{titlepage}
+}

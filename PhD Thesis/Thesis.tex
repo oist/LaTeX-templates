@@ -30,16 +30,6 @@
 
 \usepackage{fancyhdr} % For the headers
 
-\usepackage{eso-pic} % For the background picture on the title page
-\newcommand\BackgroundPic{%
-\put(-250,-160){%
-\parbox[b][\paperheight]{\paperwidth}{%
-\vfill
-\centering
-\includegraphics[width=\paperwidth]{symbol.jpg}%
-\vfill
-}}}
-
 \usepackage{hyperref} % Adds clickable links at references
 
 %-------------------------------------------------------------------------------
@@ -61,25 +51,13 @@
 \pagestyle{empty} % No page numbers
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the preamble pages
 
-\begin{titlepage}
-\AddToShipoutPicture*{\BackgroundPic}
-\begin{center}
-\vfill
-{\large \scshape Okinawa Institute of Science and Technology\\Graduate University}\\[0.7cm]
-{\large Thesis submitted for the degree }\\[0.7cm]
-{\Large Doctor of Philosophy}\\[0.5cm]
-\rule{\textwidth}{1.5pt}\\[0cm]
-{\huge \bfseries \thesistitle \par \ }\\[-0.5cm]
-\rule{\textwidth}{1.5pt}\\[2.5cm]
-\hfill  by\\[1cm]
-\hfill  {\large \bfseries\name}\\
-\vfill
-{\hfill \large Supervisor: \textbf{\supervisor}} \\
-\ifx\cosupervisor\undefined\else{\hfill \large Co-Supervisor: \textbf{\cosupervisor}} \\ \fi
-\vspace{1cm}
-\hfill  \submissiondate
-\end{center}
-\end{titlepage}
+\puttitle{
+	title=\thesistitle,
+	name=\name,
+	supervisor=\supervisor,
+	submissiondate=\submissiondate
+}
+% if you have a cosupervisor, use \hogehoge{title=\thesistitle, name=\name, supervisor=\supervisor, cosupervidor=\cosupervisor, submissiondate=\submissiondate} instead.
 
 %-------------------------------------------------------------------------------
 %	PREAMBLE PAGES (delete unnecessary pages)
