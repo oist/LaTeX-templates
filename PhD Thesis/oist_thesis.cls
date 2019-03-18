@@ -9,10 +9,9 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{oistthesis}[2019/3/17 OIST thesis submission class]
 
-\newif\if@final\@finalfalse
-\DeclareOption{final}{
-	\@finaltrue
-}
+\newif\if@final\@finaltrue
+\DeclareOption{temporary}{\@finalfalse}
+\DeclareOption{final}{\@finaltrue}
 
 \ProcessOptions\relax
 

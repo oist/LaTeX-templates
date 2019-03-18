@@ -1,6 +1,6 @@
 \chapter{How to use the templates} \label{ch-2}
 
-This is a practical guide into how to use this template, by explaining the role of the different folders, \texttt{Temporary\_Thesis.tex} and  \texttt{Final\_Thesis.tex}, the main file to compile the temporary version of the thesis and the final version respectively.
+This is a practical guide into how to use this template, by explaining the role of the different options, \texttt{Temporary\_Thesis.tex} and  \texttt{Final\_Thesis.tex}, the main file to compile the temporary version of the thesis and the final version respectively.
 
 \section{Folders}
 
@@ -30,9 +30,9 @@ The main folder contains three folders detailed here:
 
 \section{\texttt{Thesis.tex}}
 
-This is the main file, the only one that needs to be compiled to build the thesis. Compile once with \LaTeX, once with BibTeX and finally twice with \LaTeX\ to get all the references right. At the top of this file, you can see \verb|\documentclass[final]{oist_thesis}|. When you submit a final version, do not modify it. When you submit a temporary version to the graduate school, use \verb|\documentclass{oist_thesis}| instead.
+This is the main file, the only one that needs to be compiled to build the thesis. Compile once with \LaTeX, once with BibTeX and finally twice with \LaTeX\ to get all the references right. At the top of this file, you can see \verb|\documentclass[temporary]{oist_thesis}|. When you submit a temporary version to the graduate school, do not modify it. When you submit a final version, use \verb|\documentclass[final]{oist_thesis}| instead. 
 
-Let's go through each section and comment them briefly. The last section will emphasize the differences between PDF files compiled with \verb|\documentclass{oist_thesis}| and \verb|\documentclass[final]{oist_thesis}|.
+Let's go through each section and comment them briefly. The last section will emphasize the differences between options \verb|\documentclass[temporary]{oist_thesis}| and \verb|\documentclass[final]{oist_thesis}|.
 
 \subsection{PACKAGES AND OTHER DOCUMENT CONFIGURATIONS}
 
@@ -74,7 +74,7 @@ This last section add the PDF files of your previously published articles (or ab
 
 \subsection{Differences between a temporary version and final version}
 
-There are two main differences between PDF files compiled with \verb|\documentclass{oist_thesis}| and \verb|\documentclass[final]{oist_thesis}|. 
+There are two main differences between \verb|\documentclass[temporary]{oist_thesis}| and \verb|\documentclass[final]{oist_thesis}|. 
 
 The first difference is that the final version (\verb|\documentclass[final]{oist_thesis}|) does not contain the published articles for copyright reasons. 
 
