@@ -1,10 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% OIST Doctoral Thesis - Temporary bound version
+% OIST Doctoral Thesis
 % LaTeX Template
 % Version 0.2 (2016/04/06)
-%
-% This version is the temporary binding version which will be submitted to the thesis examiners.
-% Many features (such as double spacing) are meant for the examiners' convenience, do not modify them.
 %
 % Original author:
 % Jeremie Gillet
@@ -25,22 +22,45 @@
 \graphicspath{{./Images/}} % Specifies the directory where pictures are stored
 
 \usepackage{longtable} % tables that can span several pages
-
 \usepackage{pdfpages} % If you want to include a pdf file of your published paper as an appendix
-
 \usepackage{fancyhdr} % For the headers
-
 \usepackage{hyperref} % Adds clickable links at references
 
-%-------------------------------------------------------------------------------
-%	CUSTOM VALUES, COMMANDS AND PACKAGES (NOT IN THIS FILE)
-%-------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY STYLE (pick the style you want)
+%----------------------------------------------------------------------------------------
 
-% Open Preamble/mydefinitions.tex and enter some values (name, thesis title...)
-% also include your own custom LaTeX functions and packages
-% DO NOT add your packages here to ensure the temporary and final thesis use the same packages
+\usepackage[square, numbers, sort&compress]{natbib} % for bibliography - Square brackets, citing references with numbers, citations sorted by appearance in the text and compressed (as in [4-7])
+%\usepackage[longnamesfirst,round]{natbib} % Natural Sciences bibliography
 
-\input{Preamble/mydefinitions}
+\bibliographystyle{Preamble/physics_bibstyle} % You may use a different style adapted to your field
+%\bibliographystyle{abbrvnat} % You may use a different style adapted to your field
+
+%----------------------------------------------------------------------------------------
+%	YOUR PACKAGES (be careful of package interaction)
+%----------------------------------------------------------------------------------------
+
+\usepackage{amsthm,amsmath,amssymb,amsfonts,bbm}% Math symbols
+
+%----------------------------------------------------------------------------------------
+%	YOUR DEFINITIONS AND COMMANDS
+%----------------------------------------------------------------------------------------
+
+% New Commands
+\newcommand{\bea}{\begin{eqnarray}} % Shortcut for equation arrays
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\e}[1]{\times 10^{#1}}  % Powers of 10 notation
+
+% Defining a theorem box for Criteria
+\newtheorem{critere}{Criterion}
+\newcommand{\crit}[2]{
+	\begin{center}
+		\fbox{ \begin{minipage}[c]{0.9 \textwidth}
+				\begin{critere}
+					\textbf{\textup{ #1}} --- #2
+				\end{critere}
+	\end{minipage}  } \end{center}
+}
 
 \begin{document}
 
@@ -52,12 +72,12 @@
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the preamble pages
 
 \puttitle{
-	title=\thesistitle,
-	name=\name,
-	supervisor=\supervisor,
-	submissiondate=\submissiondate
+	title=\LaTeX\ thesis proposal template, % Title of the thesis
+	name=Jeremie Gillet, % Author name
+	supervisor=S.~Upervisor, % Supervisor name
+	cosupervisor=C.~O'Supervisor, % Co-Supervisor name, remove this line if there is none
+	submissiondate={2016, April}  % Submission date "Month, year"
 }
-% if you have a cosupervisor, use \hogehoge{title=\thesistitle, name=\name, supervisor=\supervisor, cosupervidor=\cosupervisor, submissiondate=\submissiondate} instead.
 
 %-------------------------------------------------------------------------------
 %	PREAMBLE PAGES (delete unnecessary pages)

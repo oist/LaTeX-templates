@@ -15,7 +15,9 @@
 
 \ProcessOptions\relax
 
-% handling version of the thesis
+%-------------------------------------------------------------------------------
+%	HANDRING THE VERISON OF THE THESIS
+%-------------------------------------------------------------------------------
 \RequirePackage{setspace} % For using double spacing
 
 \if@final
@@ -88,7 +90,9 @@
 	}
 \fi
 
-% ----- For \maketitle -----
+%-------------------------------------------------------------------------------
+%	FOR \maketitle
+%-------------------------------------------------------------------------------
 \RequirePackage{graphicx} % For including images
 \RequirePackage{eso-pic} % For the background picture on the title page
 \newcommand\BackgroundPic{%
@@ -104,11 +108,11 @@
 \RequirePackage{xkeyval}
 
 \newif\if@cosupervisorexist\@cosupervisorexistfalse
-\define@key[OIST]{title}{title}{\def\title@title{#1}}
-\define@key[OIST]{title}{name}{\def\title@name{#1}}
-\define@key[OIST]{title}{supervisor}{\def\title@supervisor{#1}}
-\define@key[OIST]{title}{cosupervisor}{\def\title@cosupervisor{#1}\@cosupervisorexisttrue}
-\define@key[OIST]{title}{submissiondate}{\def\title@submissiondate{#1}}
+\define@key[OIST]{title}{title}{\def\thesistitle{#1}}
+\define@key[OIST]{title}{name}{\def\name{#1}}
+\define@key[OIST]{title}{supervisor}{\def\supervisor{#1}}
+\define@key[OIST]{title}{cosupervisor}{\def\cosupervisor{#1}\@cosupervisorexisttrue}
+\define@key[OIST]{title}{submissiondate}{\def\submissiondate{#1}}
 
 \providecommand{\puttitle}{}
 \renewcommand{\puttitle}[1]{
@@ -118,6 +122,7 @@
 \providecommand{\@puttitle}{}
 \renewcommand{\@puttitle}[2]{%
 	\setkeys[OIST]{title}{#2}
+
 	\begin{titlepage}
 		\AddToShipoutPicture*{\BackgroundPic}
 		\begin{center}
@@ -126,15 +131,15 @@
 			{\large Thesis submitted for the degree }\\[0.7cm]
 			{\Large Doctor of Philosophy}\\[0.5cm]
 			\rule{\textwidth}{1.5pt}\\[0cm]
-			{\huge \bfseries \title@title \par \ }\\[-0.5cm]
+			{\huge \bfseries \thesistitle \par \ }\\[-0.5cm]
 			\rule{\textwidth}{1.5pt}\\[2.5cm]
 			\hfill  by\\[1cm]
-			\hfill  {\large \bfseries\title@name}\\
+			\hfill  {\large \bfseries\name}\\
 			\vfill
-			{\hfill \large Supervisor: \textbf{\title@supervisor}} \\
-			\if@cosupervisorexist{\hfill \large Co-Supervisor: \textbf{\title@cosupervisor} \\}\else\fi
+			{\hfill \large Supervisor: \textbf{\supervisor}} \\
+			\if@cosupervisorexist{\hfill \large Co-Supervisor: \textbf{\cosupervisor} \\}\else\fi
 			\vspace{1cm}
-			\hfill  \title@submissiondate
+			\hfill  \submissiondate
 		\end{center}
 	\end{titlepage}
 }
