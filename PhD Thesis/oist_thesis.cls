@@ -16,9 +16,8 @@
 \ProcessOptions\relax
 
 %-------------------------------------------------------------------------------
-%	HANDRING THE VERISON OF THE THESIS
+%	HANDLING THE STYLE OF THE THESIS
 %-------------------------------------------------------------------------------
-\RequirePackage{setspace} % For using double spacing
 
 \if@final
 	\LoadClass[12pt, twoside]{book} % 12 pt font, two-sided book style
@@ -65,15 +64,15 @@
 
 	\newcommand{\numberedchapter}{ % Preparation for numbered chapters
 		\cleardoublepage % To make sure the previous headers are passed
-		\lhead{\bfseries \leftmark}
-	}% Header
+		\lhead{\bfseries \leftmark} % Header
+	}
 	
 	\newcommand{\unnumberedchapter}[1]{ % Preparation for unnumbered chapters
 		\cleardoublepage % To make sure the previous headers are passed
 		\phantomsection % To help hyperref link to the right page
 		\addcontentsline{toc}{chapter}{#1} % Also adds the chapter name to the Contents
-		\lhead{\bfseries #1}
-	}% Header
+		\lhead{\bfseries #1} % Header
+	}
 
 	\newcommand{\startpreamble}{
 		\pagestyle{fancy} % Change the header style
@@ -82,7 +81,7 @@
 		\rhead{\thepage} % Page number at the right of the header
 		\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the preamble pages
 		\setcounter{page}{2} % Include the title page in page counting
-		\thesisspacing % Double spacing
+		\thesisspacing % Double or single spacing
 	}
 
 	\newcommand{\includepublications}{
@@ -91,11 +90,10 @@
 \fi
 
 %-------------------------------------------------------------------------------
-%	FOR \maketitle
+%	BUILDING THE TITLE PAGE
 %-------------------------------------------------------------------------------
-\RequirePackage{graphicx} % For including images
-\RequirePackage{eso-pic} % For the background picture on the title page
-\newcommand\BackgroundPic{%
+
+\newcommand\BackgroundPic{% Adding background picture
 	\put(-250,-160){%
 		\parbox[b][\paperheight]{\paperwidth}{%
 			\vfill
@@ -104,8 +102,7 @@
 			\vfill
 }}}
 
-% handling keyword options.
-\RequirePackage{xkeyval}
+\RequirePackage{xkeyval} % Handling keyword options.
 
 \newif\if@cosupervisorexist\@cosupervisorexistfalse
 \define@key[OIST]{title}{title}{\def\thesistitle{#1}}
