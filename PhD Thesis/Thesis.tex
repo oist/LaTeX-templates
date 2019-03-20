@@ -30,9 +30,17 @@
 \usepackage{longtable} % tables that can span several pages
 \usepackage{pdfpages} % To include a pdf files of your published papers as an appendix
 \usepackage{fancyhdr} % For the headers
-\usepackage[xindy, toc, acronym, symbols, nonumberlist]{glossaries} % For automatically making lists of glossaries and acronyms
+
+% For automatically making lists of glossaries and acronyms.
+% Make sure that you compile Thesis.tex correctly. If you are compiling with pdflatex,
+% you need to run "pdflatex Thesis.tex", "makeglossaries Thesis", and "pdflatex Thesis.tex".
+% If you are using overleaf, "you don't have to do anything special, but if you add new terms
+% to the glossary once you compiled it, make sure to click on Clear cached files first under
+% logs option)" as described in https://overleaf.com/learn/latex/Glossaries.
+% If you want glossaries to be clickable, place the following line after \usepackage{hyperref}.
+\usepackage[xindy, toc, acronym, symbols, nonumberlist]{glossaries}
+
 \usepackage{hyperref} % Adds clickable links at references
-%\usepackage[xindy, toc, acronym, symbols, nonumberlist]{glossaries} % If you want glossaries to be clickable.
 
 %----------------------------------------------------------------------------------------
 %	ADD ABBREVIATIONS, GLOSSARIES, AND ACRONYMS
