@@ -1,6 +1,6 @@
 \chapter{How to use the templates} \label{ch-2}
 
-This is a practical guide into how to use this template, by explaining the role of the different folders, and an option of \verb|\documentclass{oist_thesis}|, which accepts either \verb|temporary| or \verb|final|.
+This is a practical guide into how to use this template, by explaining the role of the different folders, how to use glossaries package, and an option of \verb|\documentclass{oist_thesis}|, which accepts either \verb|temporary| or \verb|final|.
 
 \section{Folders}
 
@@ -14,18 +14,34 @@ The main folder contains three folders detailed here:
 
 \item \textbf{Preamble.} This folder contains a series of \LaTeX\ files with the pages that will appear before the main text. Please write (or copy and paste) your own text in those files and delete the dummy text when appropriate. The files are:
 \begin{itemize}
-\item \texttt{abbreviations.tex} --- List of abbreviations. If the list goes over one page, create another table.
+\item \texttt{abbreviations.tex} --- List of abbreviations.
 \item \texttt{abstract.tex} --- Abstract. Follow directions in the file.
 \item \texttt{acknowledgments.tex} --- Acknowledgments. Follow directions in the file.
 \item \texttt{declaration.tex} --- Declaration of Original and Sole Authorship. Only modify the last item. This page needs to be signed once printed.
 \item \texttt{dedication.tex} --- Dedication (optional). Should only be a very few lines.
-\item \texttt{glossary.tex} --- Glossary (optional). If the list goes over one page, create another table.
-\item \texttt{nomenclature.tex} --- Nomenclature (optional). If the list goes over one page, create another table.
+\item \texttt{glossary.tex} --- Glossary (optional).
+\item \texttt{nomenclature.tex} --- Nomenclature (optional).
 \item \texttt{physics\_bibstyle.bst} --- Bibliography style file modified by Jeremie Gillet in 2011 to suit his thesis. Might be suitable for physics. If you want to use another custom bibliography style, include the file in this folder.
 \item \texttt{Thesis\_bibliography.bib} --- BibTeX file containing your bibliography.
 \end{itemize}
 
 \end{itemize}
+
+\section{The Usage of Glossaries Package}
+
+Glossaries package automatically creates lists of glossaries, nomenclatures, and abbreviations with indices. Furthermore, it can automatically find first use of a term, and appropriately handle it. For example, \verb|\gls{ppt}| prints out \gls{ppt} when used for the first time. However, it prints out \gls{ppt} for the second time. The package can also handle nomenclatures. For example, \verb|\gls{light_speed}| prints out \gls{light_speed}.
+
+For details on how to define glossaries, nomenclatures, and abbreviations, refer to \texttt{glossary.tex}, \texttt{nomenclature.tex}, and \texttt{abbreviations.tex} in \texttt{Preamble} folder, respectively. You can find descriptions as well as examples.
+
+To use a glossary, use \verb|\gls{label}|, where \texttt{label} is an identifier of this glossary defined in \texttt{Preamble/glossary.tex}. For example, \verb|\gls{dipole_blockade}| prints out \gls{dipole_blockade}. If you need to capitalize the first letter, use \verb|\Gls{dipole_blockade}| instead. It prints out \Gls{dipole_blockade}. If you need a plural form, use \verb|\glspl{dipole_blockade}|. If you need a plural form with its first letter capitalized, use \verb|\Glspl{dipole_blockade}|.
+
+When compiling a tex file, this glossaries package requires a special care. If you compile \texttt{Thesis.tex} with pdflatex on your local machine, you need to run the following commands:
+\begin{enumerate}
+	\item \texttt{pdflatex Thesis.tex}
+	\item \texttt{makeglossaries Thesis}
+	\item \texttt{pdflatex Thesis.tex}
+\end{enumerate}
+If you are using Overleaf, "you don't have to do anything special, but if you add new terms to the glossary once you compiled it, make sure to click on Clear cached files first under logs option)" as described in \url{https://overleaf.com/learn/latex/Glossaries}.
 
 \section{\texttt{Thesis.tex}}
 

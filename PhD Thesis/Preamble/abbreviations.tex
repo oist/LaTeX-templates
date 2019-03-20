@@ -1,9 +1,21 @@
-\unnumberedchapter{Abbreviations} 
-\chapter*{Abbreviations} 
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+% For automatic construction of a list of abbreviations, glossaries package is used.
+%
+% To define an abbreviation (or an acronym), use the following command.
+% 		\newacronym[plural=plural_form_of_this_entry]{label}{short}{long}
+% Here, label is a lebel of an entry.
+% short is used as an abbreviation of long.
+% plural=plural_of_this_entry passes a plural form of this entry in texts to the package. plural_of_this_entry is used in texts.
+%
+% To use this entry in texts, use \gls{label}. If you need a plural form, use \glspl{label}.
+% the first letter.
+%
+% For more details, see the examples below or the following links:
+% 	(longest)	http://www.math.ucsd.edu/~jeggers/latex/glossaries-user.pdf
+% 	(longer)	https://en.wikibooks.org/wiki/LaTeX/Glossary
+% 	(long)		https://ja.overleaf.com/learn/latex/Glossaries
 
-All abbreviations used in the thesis should be listed here, with their definitions, in alphabetical order.  This includes trivial and commonly used abbreviations (at your own discretion), but not words that have entered into general English usage (such as laser or DNA).  In particular, non-standard abbreviations should be presented here.  This is an aid to the reader who may not read all sections of the thesis. \\ % You can delete this paragraph, only the table is needed.
-
-\begin{longtable}{rl}
-PPT & positive partial transpose\\
-SRPT & Schr\"odinger-Robertson partial transpose
-\end{longtable}
+\newacronym[plural=PPTs]{ppt}{PPT}{Positive Partial Transpose}
+\newacronym[plural=SRPTs]{srpt}{SRPT}{Schr\"odinger-Robertson Partial Transpose}

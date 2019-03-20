@@ -84,6 +84,9 @@ acs-*.bib
 *.glo
 *.gls
 *.glsdefs
+*.slg
+*.slo
+*.sls
 
 # gnuplottex
 *-gnuplottex-*

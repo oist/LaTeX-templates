@@ -1,11 +1,59 @@
-\unnumberedchapter{Nomenclature} 
-\chapter*{Nomenclature} 
+%----------------------------------------------------------------------------------------
+%	NOMENCLATURE
+%----------------------------------------------------------------------------------------
+% For automatic construction of a list of nomenclatures, glossaries package is used.
+%
+% To define a nomenclature (or a symbol), use the following command.
+% 		\newglossaryentry{label}{
+%			type=symbols,
+%			name=name_of_this_entry,
+%			description=description_of_this_entry,
+%			sort=key_for_sort
+%		}
+% Here, label is a lebel of an entry.
+% type=symbols tells glossaries package to which type this entry belongs. Do not modify it.
+% name=name_of_this_entry passes a name of this entry to the package.
+% description=description_of_this_entry passes description of this entry to the package.
+% sort=key_for_sort passes a key of this entry for soting to the package. Strongly encouraged to use.
+%
+% To use this entry in texts, use \gls{label}. If the first letter needs to be capitalized, use \Gls instead.
+%
+% For more details, see the examples below or the following links:
+% 	(longest)	http://www.math.ucsd.edu/~jeggers/latex/glossaries-user.pdf
+% 	(longer)	https://en.wikibooks.org/wiki/LaTeX/Glossary
+% 	(long)		https://ja.overleaf.com/learn/latex/Glossaries
 
-% Break up this table into several ones if it takes up more than one page
-\begin{longtable}{rl}
-$c$ & Speed of light ($2.997\ 924\ 58 \e{8}\ \mbox{ms}^{-1}$) \\
-$\hbar$ & Planck constant ($1.054\ 572\ 66\e{-34}\ \mbox{Js}$) \\
-$k_B$ & Boltzmann constant  ($1.380\ 658\e{-23}\ \mbox{JK}^{-1} $) \\
-$Z_0$ &Impedance of free space  ($376.730\ 313\ 461\ \Omega) $ \\
-$\mu_0$ &Permeability of free-space ($4\pi\e{-7}\ \mbox{Hm}^{-1}$) \\
-\end{longtable}
+\newglossaryentry{light_speed}{
+	type=symbols,
+	name={\ensuremath{c}},
+	description={Speed of light ($2.997\ 924\ 58 \e{8}\ \mbox{ms}^{-1}$)},
+	sort=c
+}
+
+\newglossaryentry{planck}{
+	type=symbols,
+	name={\ensuremath{\hbar}},
+	description={Planck constant ($1.054\ 572\ 66\e{-34}\ \mbox{Js}$)},
+	sort=h
+}
+
+\newglossaryentry{boltzmann}{
+	type=symbols,
+	name={\ensuremath{\hbar}},
+	description={Boltzmann constant ($1.380\ 658\e{-23}\ \mbox{JK}^{-1} $)},
+	sort=kb
+}
+
+\newglossaryentry{free_spece_impedance}{
+	type=symbols,
+	name={\ensuremath{Z_0}},
+	description={Impedance of free space  ($376.730\ 313\ 461\ \Omega) $},
+	sort=zzero
+}
+
+\newglossaryentry{free_space_permeability}{
+	type=symbols,
+	name={\ensuremath{\mu_0}},
+	description={Permeability of free-space ($4\pi\e{-7}\ \mbox{Hm}^{-1}$)},
+	sort=muzero
+}

@@ -1,10 +1,40 @@
-\unnumberedchapter{Glossary} 
-\chapter*{Glossary} 
+%----------------------------------------------------------------------------------------
+%	GLOSSARY
+%----------------------------------------------------------------------------------------
+% For automatic construction of a list of glossaries, glossaries package is used.
+%
+% To define a glossary, use the following command.
+% 		\newglossaryentry{label}{
+%			name=name_of_this_entry,
+%			text=text_of_this_entry,
+%			plural=plural_of_this_entry,
+%			description=description_of_this_entry
+%		}
+% Here, label is a lebel of an entry.
+% name=name_of_this_entry passes a name of this entry to the package.
+% text=text_of_this_entry passes a name of this entry in texts to the package. text_of_this_entry is used in texts.
+% plural=plural_of_this_entry passes a plural form of this entry in texts to the package. plural_of_this_entry is used in texts.
+% description=description_of_this_entry passes description of this entry to the package.
+%
+% To use this entry in texts, use \gls{label}. If the first letter needs to be capitalized, use \Gls instead.
+% If you need a plural form, use either \glspl{label} or \Glspl{label} depending on whether you want to capitalize
+% the first letter.
+%
+% For more details, see the examples below or the following links:
+% 	(longest)	http://www.math.ucsd.edu/~jeggers/latex/glossaries-user.pdf
+% 	(longer)	https://en.wikibooks.org/wiki/LaTeX/Glossary
+% 	(long)		https://ja.overleaf.com/learn/latex/Glossaries
 
-% Break up this table into several ones if it takes up more than one page
-\begin{center}
-\begin{longtable}{r p{0.58 \textwidth}}
-Dipole Blockade & Phenomenon in which the simultaneous excitation of two atoms is inhibited by their dipolar interaction. \\
-Cavity Induced Transparency & Phenomenon in which a cavity containing two atoms excited with light at a frequency halfway between the atomic frequencies contains the number of photons an empty cavity would contain.  \\ 
-\end{longtable}
-\end{center}
+\newglossaryentry{dipole_blockade}{
+	name=Dipole Blockade,
+	text=dipole blockade,
+	plural=dipole blockades,
+	description={Phenomenon in which the simultaneous excitation of two atoms is inhibited by their dipolar interaction}
+}
+
+\newglossaryentry{cavity_induced_transparency}{
+	name=Cavity Induced Transparency,
+	text=cavity induced transparency,
+	plural=cavity induced transparencies,
+	description={Phenomenon in which a cavity containing two atoms excited with light at a frequency halfway between the atomic frequencies contains the number of photons an empty cavity would contain}
+}

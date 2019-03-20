@@ -30,7 +30,18 @@
 \usepackage{longtable} % tables that can span several pages
 \usepackage{pdfpages} % To include a pdf files of your published papers as an appendix
 \usepackage{fancyhdr} % For the headers
+\usepackage[xindy, toc, acronym, symbols, nonumberlist]{glossaries} % For automatically making lists of glossaries and acronyms
 \usepackage{hyperref} % Adds clickable links at references
+%\usepackage[xindy, toc, acronym, symbols, nonumberlist]{glossaries} % If you want glossaries to be clickable.
+
+%----------------------------------------------------------------------------------------
+%	ADD ABBREVIATIONS, GLOSSARIES, AND ACRONYMS
+%----------------------------------------------------------------------------------------
+
+\makeglossaries % Starts glossaries package
+\input{Preamble/abbreviations} % Define abbreviations in Preamble/abbreviations.tex. If unnecessary, remove this line.
+\input{Preamble/glossary} % Define glossaries in Preamble/glossary.tex. If unnecessary, remove this line.
+\input{Preamble/nomenclature} % Define nomenclature in Preable/nomenclature.tex. If unnecessary, remove this line.
 
 %----------------------------------------------------------------------------------------
 %	ADD YOUR PACKAGES (be careful of package interaction)
@@ -93,9 +104,9 @@
 \input{Preamble/declaration}
 \input{Preamble/abstract}
 \input{Preamble/acknowledgments}
-\input{Preamble/abbreviations}
-\input{Preamble/glossary}
-\input{Preamble/nomenclature}
+\printacronyms[title=Abbreviation, toctitle=Abbreviation]
+\printglossary[title=Glossary, toctitle=Glossary]
+\printsymbols[title=Nomenclature, toctitle=Nomenclature]
 \input{Preamble/dedication}
 
 %-------------------------------------------------------------------------------
