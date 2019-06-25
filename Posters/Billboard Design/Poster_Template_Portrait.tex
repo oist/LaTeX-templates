@@ -1,0 +1,152 @@
+% Poster Template for the Okinawa Institute of Science and Technology (OIST)
+% Created by Jeremie Gillet on June 2019, with help from Tani Unit members
+% Inspired from https://www.youtube.com/watch?v=1RwJbhkCA58
+
+\documentclass[
+    a0paper, % Size of poster
+    portrait, % Orientation
+    fontscale=0.4 % General scaling for fonts, increase the number for smaller fonts (considered removing text first)
+    ]{baposter}
+
+% Packages required for the template
+\usepackage{qrcode} % For creating QR codes
+\usepackage{fix-cm} % Arbitrary font size
+
+% Add any packages you need here
+\usepackage{graphicx} % Required for including images
+\graphicspath{{figures/}} % Directory in which figures are stored
+\usepackage{amsmath} % For typesetting math
+
+% Defining colors
+\selectcolormodel{HTML}
+\definecolor{oistRed}{HTML}{C80019} 
+\definecolor{grey}{HTML}{0F0D08} 
+
+% Changing fonts family
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{avant}
+
+% Starting document, feel free to change the style of headers and boxes
+% Documentation can be found here: http://www.brian-amberg.de/uni/poster/
+% Unfortunately it is not very complete
+\begin{document}
+\begin{poster}{ % General poster options
+    columns=3, % Number of columns
+    eyecatcher=true, % Set to false for ignoring the left logo in the title and move the title left
+    colspacing=1em, % Column spacing
+    bgColorOne=white, % Background color for the gradient on the left side of the poster
+    bgColorTwo=white, % Background color for the gradient on the right side of the poster
+    borderColor=oistRed, % Border color
+    headerheight=0.01 \textheight, % Height of the header
+    headershape=roundedright, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
+    headerfont=\Large\bf\textsc, % Large, bold and sans serif font in the headers of content boxes
+    headerborder=closed, % Adds a border around the header of content boxes
+    linewidth=2pt, % Width of the border lines around content boxes
+    headerColorOne=white, % Background color for the header in the content boxes (left side)
+    headerColorTwo=oistRed, % Background color for the header in the content boxes (right side)
+    headerFontColor=grey, % Text color for the header text in the content boxes
+    boxColorOne=white, % Background color of the content boxes
+    textborder=roundedleft % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
+}{}{}{}{} % We don't use the poster header features
+
+
+% Center message
+\begin{posterbox}[
+    name = message,  % Name for alignment 
+    column = 0, % Second column 
+    span = 3, % Over 3 columns
+    boxColorOne=oistRed, % Changing background color
+    headershade=plain,  % Changing header style
+    headerColorOne=oistRed % Changing header color
+    ]{}
+    \fontsize{45}{50} \selectfont  \color{white} % Changing font size and color
+    
+    \includegraphics[width=\textwidth, trim= 3 0 3 10]{footer-white.png}
+
+    \hspace{1em}
+    \begin{minipage}[c][ 0.4 \textheight ]{0.6\textwidth}
+
+        Single sentence explaining your  \textbf{main message} in plain English, \textbf{no jargon} allowed
+
+        \vspace{2em}
+        
+        \LARGE 
+        List of authors\\ 
+        Okinawa Institute of Science and Technology, Japan
+    \end{minipage}
+
+    % Generating the QR code. Alternatively, they can be generated online with tools such as https://www.qrcode-monkey.com
+    \vspace{-5em} \hfill 
+    \colorbox{white}{ \makebox[4.5em]{
+        \color{black} 
+        \qrcode[height = 4em,padding]{https://groups.oist.jp/grad} }
+    } \hspace{0.3em}
+
+    \vspace{0.3em}
+    \hfill {\normalsize Reference to paper, URL, contact email, content of QR code... }
+    \vspace{0.3em}
+
+\end{posterbox}
+
+
+
+% Content for left column
+\begin{posterbox}[
+    name = box1,  % Name for alignment 
+    column = 0, % First column 
+    below = message % Alignment
+    ]{Box title}
+    Could be introduction, abstract, methods, results, discussion...
+\end{posterbox}
+
+
+\begin{posterbox}[
+    name = box2,  % Name for alignment 
+    column = 1, % Second column 
+    below = message % Alignment
+    ]{Box title}
+    Could be introduction, abstract, methods, results, discussion...
+\end{posterbox}
+
+
+\begin{posterbox}[
+    name = box3,  % Name for alignment 
+    column = 2, % Third column 
+    below = message % Alignment
+    ]{Box title}
+    Could be introduction, abstract, methods, results, discussion...
+\end{posterbox}
+
+
+\begin{posterbox}[
+    name = box4,  % Name for alignment 
+    column = 0, % First column 
+    below = box1 % Alignment
+    ]{Box title}
+    Could be introduction, abstract, methods, results, discussion...
+\end{posterbox}
+
+
+% Content for right column
+\begin{posterbox}[
+    name = box5,  % Name for alignment 
+    column = 1, % Last column 
+    below = box2 % Alignment
+    ]{Box title}
+    Could be introduction, abstract, methods, results, discussion...
+\end{posterbox}
+
+% References, if required
+\begin{posterbox}[
+    name = references,  % Name for alignment 
+    column = 2, % Last column 
+    below = box3 % Alignment
+    ]{References}
+\renewcommand{\section}[2]{} % Get rid of the default "References" section title
+\nocite{*} % Insert publications even if they are not cited in the poster
+\bibliographystyle{unsrt}
+\bibliography{sample} % Use sample.bib as the bibliography file
+\end{posterbox}
+
+\end{poster}
+\end{document}
