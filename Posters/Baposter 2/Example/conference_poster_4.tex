@@ -1,0 +1,220 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% baposter Landscape Poster
+% LaTeX Template
+% Version 1.0 (11/06/13)
+%
+% baposter Class Created by:
+% Brian Amberg (baposter@brian-amberg.de)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[landscape,a0paper,fontscale=0.285]{baposter} % Adjust the font scale/size here
+
+\usepackage{graphicx,wrapfig,scrextend,pst-text,vwcol} % Required for including images
+\graphicspath{{figures/}} % Directory in which figures are stored
+
+\usepackage{amsmath} % For typesetting math
+\usepackage{amssymb} % Adds new symbols to be used in math mode
+
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{enumitem} % Used to reduce itemize/enumerate spacing
+\usepackage{palatino} % Use the Palatino font
+\usepackage[font=small,labelfont=bf]{caption} % Required for specifying captions to tables and figures
+
+\usepackage{multicol} % Required for multiple columns
+\setlength{\columnsep}{1.5em} % Slightly increase the space between columns
+\setlength{\columnseprule}{0mm} % No horizontal rule between columns
+
+\usepackage{tikz} % Required for flow chart
+\usetikzlibrary{shapes,arrows} % Tikz libraries required for the flow chart in the template
+
+\newcommand{\compresslist}{ % Define a command to reduce spacing within itemize/enumerate environments, this is used right after \begin{itemize} or \begin{enumerate}
+\setlength{\itemsep}{1pt}
+\setlength{\parskip}{0pt}
+\setlength{\parsep}{0pt}
+}
+
+\definecolor{oistred}{RGB}{192,21,45} % Defines the color used for content box headers
+\definecolor{grey}{rgb}{0.06, 0.05, 0.03}
+\definecolor{smokyblack}{rgb}{0.06, 0.05, 0.03}
+
+\begin{document}
+
+\begin{poster}
+{
+headerborder=closed, % Adds a border around the header of content boxes
+colspacing=1em, % Column spacing
+bgColorOne=white, % Background color for the gradient on the left side of the poster
+bgColorTwo=white, % Background color for the gradient on the right side of the poster
+borderColor=oistred, % Border color
+headerColorOne=white, % Background color for the header in the content boxes (left side)
+headerColorTwo=oistred, % Background color for the header in the content boxes (right side)
+headerFontColor=grey, % Text color for the header text in the content boxes
+boxColorOne=white, % Background color of the content boxes
+textborder=roundedleft, % Format of the border around content boxes, can be: none, bars, coils, triangles, rectangle, rounded, roundedsmall, roundedright or faded
+eyecatcher=true, % Set to false for ignoring the left logo in the title and move the title left
+headerheight=0.1\textheight, % Height of the header
+headershape=roundedright, % Specify the rounded corner in the content box headers, can be: rectangle, small-rounded, roundedright, roundedleft or rounded
+headerfont=\Large\bf\textsc, % Large, bold and sans serif font in the headers of content boxes
+%textfont={\setlength{\parindent}{1.5em}}, % Uncomment for paragraph indentation
+linewidth=2pt % Width of the border lines around content boxes
+}
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+%
+{\includegraphics[height=4em]{logo.jpg}} % First university/lab logo on the left
+{\bf\textsc{Exploring Gridworlds with State Complexes}\vspace{0.5em}} % Poster title
+{\textsc{\{ Tom Burns and Robert Tang \} \hspace{12pt} OIST Graduate University, Japan}} % Author names and institution
+{\includegraphics[height=4em]{logo.jpg}} % Second university/lab logo on the right
+
+%----------------------------------------------------------------------------------------
+%	Abstract
+%----------------------------------------------------------------------------------------
+
+\headerbox{1. Abstract}{name=abstract,column=0,row=0}{
+
+Gridworlds are a popular and powerful test-bed for artificial intelligence (AI) algorithms, especially in reinforcement learning and associated AI safety problems. To describe how AI agents behave in such gridworlds, we consider gridworlds as reconfigurable systems and construct their state complexes. These state complexes reveal the underlying structures and patterns in the system's possible reconfigurations. This work incorporates the concepts of gridworlds, reconfigurable systems, and state complexes to show structures and patterns found in the state complexes of example gridworlds.
+
+\vspace{0.3em} % When there are two boxes, some whitespace may need to be added if the one on the right has more content
+}
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\headerbox{References}{name=references,column=0,above=bottom}{
+
+\renewcommand{\section}[2]{\vskip 0.05em} % Get rid of the default "References" section title
+\nocite{*} % Insert publications even if they are not cited in the poster
+\small{ % Reduce the font size in this block
+\bibliographystyle{unsrt}
+\bibliography{sample} % Use sample.bib as the bibliography file
+}}
+
+%----------------------------------------------------------------------------------------
+%	FUTURE RESEARCH
+%----------------------------------------------------------------------------------------
+
+\headerbox{6. Future Research}{name=futureresearch,column=1,span=2,aligned=references,above=bottom}{ % This block is as tall as the references block
+
+We are currently exploring patterns and theoretical aspects of state complexes that hold across gridworlds of arbitrary size, geometry, and labelling. For example, an upper bound for the total number of states of a gridworld without objects is $\binom{n}{k}$ where $n$ is the total number of non-\textcolor{gray}{floor} and non-wall labels and $k$ is the total number of \textcolor{green}{agent} labels. Such information may be useful to incorporate into AI algorithms or for analysis of the efficiency, accuracy, or safety of such algorithms in gridworlds.
+}
+
+%----------------------------------------------------------------------------------------
+%	CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\headerbox{Contact Information}{name=contact,column=3,aligned=references,above=bottom}{ % This block is as tall as the references block
+\vspace{0.15cm}
+
+\begin{vwcol}[widths={0.3,0.7},sep=.8cm, justify=flush,rule=0pt,indent=1em] 
+    \includegraphics[width=0.25\textwidth]{QR-code.png}
+    \begin{description}\compresslist
+    \item[Web] tfburns.com
+    \item[Email] thomas.burns@oist.jp
+    \item[Phone] +81 (0)90 6863 7039
+    \end{description}
+\end{vwcol} 
+
+}
+
+
+%----------------------------------------------------------------------------------------
+%	Gridworlds
+%----------------------------------------------------------------------------------------
+
+\headerbox{2. Gridworlds}{name=grid,column=0,below=abstract,above=references}{ % This block's bottom aligns with the bottom of the conclusion block
+
+\hspace{1em}
+
+\begin{center}
+    \quad \tikz\draw[green,fill=green] (0,0) circle (.5ex); agent
+    \quad \tikz\draw[blue,fill=blue] (0,0) circle (.5ex); object
+    \quad \tikz\draw[gray,fill=gray] (0,0) circle (.5ex); floor
+    \quad \tikz\draw[black,fill=white] (0,0) circle (.5ex); wall
+    \includegraphics[height=15em]{petal-walk-1-world-crop.png}
+\end{center}
+
+Gridworlds are simplified, grid-like environments in which each \textit{cell} of the grid may be assigned a \textit{label}. In the example above, these labels are \textcolor{green}{agent}, \textcolor{blue}{object}, \textcolor{gray}{floor}, and wall. Such environments can be used to test and develop AI algorithms, particularly in reinforcement learning \cite{Leike:2017}.
+}
+
+%----------------------------------------------------------------------------------------
+%	Reconfigurable systems
+%----------------------------------------------------------------------------------------
+
+\headerbox{3. Reconfigurable systems}{name=reconfigsys,column=1,row=0,bottomaligned=abstract}{
+
+Ghrist \& Peterson \cite{Ghrist-Peterson:2007} define reconfigurable systems as a collection of labels on a graph, where local rearrangements of the labels represent reconfigurations of the system.
+\vspace{0.15cm}
+
+From \cite{Ghrist-Peterson:2007}: $G$ is a graph. $A$ is a set of possible labels on the vertices of $G$.
+\vspace{0.15cm}
+
+A \textit{generator} $\phi$ is a collection of three objects:
+\begin{itemize}
+    \item the \textit{support}, $SUP(\phi) \subset G$
+    \item the \textit{trace}, $TR(\phi) \subset SUP(\phi)$
+    \item a \textit{relabelling} for the vertex set $TR(\phi)$
+\end{itemize}
+
+}
+
+%----------------------------------------------------------------------------------------
+%	State Complexes
+%----------------------------------------------------------------------------------------
+
+\headerbox{4. State Complexes}{name=scs,column=1,below=abstract,above=references}{ % This block's bottom aligns with the bottom of the conclusion block
+\vspace{0.15cm}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{coorridor.PNG}
+\vspace{0.15cm}
+
+\includegraphics[width=1\textwidth]{SC-example.PNG}
+\vspace{-0.25cm}
+\end{center}
+
+Ghrist \& Peterson \cite{Ghrist-Peterson:2007} define a \textcolor{red}{state} of a reconfigurable system as a choice of labels (chosen from $A$) for every vertex of $G$.
+\vspace{0.15cm}
+
+$\textcolor{red}{s_i}:V(G) \rightarrow A$
+\vspace{0.15cm}
+
+The state complex $S$ is a graph with vertices corresponding to states, with edges connecting a pair states differing by a single generator.
+}
+
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	State Complexes of Gridworlds
+%----------------------------------------------------------------------------------------
+
+\headerbox{5. State Complexes of Gridworlds}{name=scsofgrids,column=2,span=2,row=0,bottomaligned=grid,above=references}{
+\begin{center}
+    \includegraphics[width=0.9\textwidth]{petal-walk-1.PNG}
+\end{center}
+
+State complexes often capture symmetries in a gridworlds' geometry or labelling, as shown in these examples. The petal-like state complex above shows different scales of geometry; for each position of the \textcolor{blue}{object} there exists a subgraph of 8 verticies (representing the 8 possible locations of the \textcolor{green}{agent}) which is connected to as many other subgraphs as is possible for the \textcolor{green}{agent} to push or pull the \textcolor{blue}{object} to a different location from the current location represented in that subgraph.
+
+\vspace{0.6cm}
+\begin{center}
+    \includegraphics[width=1\textwidth]{3-6-agents.PNG}
+\end{center}
+}
+
+
+\end{poster}
+
+\end{document}
