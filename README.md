@@ -6,6 +6,7 @@ Graduate School LaTeX templates for:
 * OIST Dark presentation
 * PhD Thesis Proposal
 * PhD Thesis
+* Scientific Posters
 
 All instructions are specified within the templates themselves.
 Contact Jeremie (jeremie.gillet@oist.jp) for any question related to the templates.
