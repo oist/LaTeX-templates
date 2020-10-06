@@ -130,8 +130,17 @@
 \input{MainText/conclusion} % Conclusion (unnumbered)
 
 %-------------------------------------------------------------------------------
-%	APPENDICES
+%	BIBLIOGRAPHY
 %-------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+\unnumberedchapter{Bibliography} % Title of the unnumbered chapter
+\bibliography{Preamble/Thesis_bibliography} % The references information are stored in the file named "Thesis_bibliography.bib"
+
+%-------------------------------------------------------------------------------
+%	APPENDICES (optional)
+%-------------------------------------------------------------------------------
+
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 \appendix
 
@@ -139,14 +148,6 @@
 \input{MainText/appendixA}
 \input{MainText/appendixB}
 %\input{MainText/appendixC}
-
-%-------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%-------------------------------------------------------------------------------
-
-\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
-\unnumberedchapter{Bibliography} % Title of the unnumbered chapter
-\bibliography{Preamble/Thesis_bibliography} % The references information are stored in the file named "Thesis_bibliography.bib"
 
 %-------------------------------------------------------------------------------
 %	PUBLISHED ARTICLES (only appears in temporary thesis)
