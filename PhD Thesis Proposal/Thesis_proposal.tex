@@ -120,7 +120,15 @@
 \input{MainText/chapter3} 
 %\input{MainText/chapter4} 
 %\input{MainText/chapter5} 
- 
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+\unnumberedchapter{Bibliography} % Title of the unnumbered chapter
+\bibliography{Preamble/Thesis_bibliography} % The references information are stored in the file named "Thesis_bibliography.bib"
+
 %----------------------------------------------------------------------------------------
 %	APPENDICES
 %----------------------------------------------------------------------------------------
@@ -132,14 +140,5 @@
 \input{MainText/appendixA}
 %\input{MainText/appendixB}
 %\input{MainText/appendixC}
-
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
-
-\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
-\unnumberedchapter{Bibliography} % Title of the unnumbered chapter
-\bibliography{Preamble/Thesis_bibliography} % The references information are stored in the file named "Thesis_bibliography.bib"
-
 
 \end{document}  
