@@ -26,6 +26,7 @@
 \usepackage{longtable} % tables that can span several pages
 \usepackage[bf]{caption} % caption: FIG in bold
 \usepackage{fancyhdr} % For the headers
+\usepackage{setspace} % For double spacing
 
 \newcommand{\numberedchapter}{ % Preparation for numbered chapters
 	\cleardoublepage % To make sure the previous headers are passed
@@ -33,6 +34,7 @@
 	\fancyhead[LO]{{\bfseries \rightmark}}}% Headers for right pages
 \newcommand{\unnumberedchapter}[1]{ % Preparation for unnumbered chapters
 	\cleardoublepage % To make sure the previous headers are passed
+	\phantomsection % To make sure the table of content links to the right page
 	\addcontentsline{toc}{chapter}{#1} % Also adds the chapter name to the Contents
 	\fancyhead[RE]{{\bfseries #1}} % Headers for left pages
 	\fancyhead[LO]{}}%Headers for right pages
@@ -113,6 +115,7 @@
 
 \addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
 \mainmatter % Begin numeric (1,2,3...) page numbering
+\doublespacing % Double spacing
 
 \numberedchapter
 \input{MainText/chapter1} % Import your chapters here
