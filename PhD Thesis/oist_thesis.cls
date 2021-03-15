@@ -25,6 +25,7 @@
 	\RequirePackage[a4paper, includehead, headheight=0.6cm, inner=3cm ,outer=2.5cm, top=2.5 cm, bottom=2.5cm]{geometry}  % Changing size of document
 	
 	\RequirePackage[bf]{caption} % caption: FIG in bold
+	\RequirePackage{emptypage} % Remove headers of empty pages
 
 	\newcommand{\thesisspacing}{\singlespacing}
 	
