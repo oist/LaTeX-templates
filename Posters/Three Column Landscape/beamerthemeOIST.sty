@@ -1,0 +1,130 @@
+\ProvidesPackage{beamerthemeI6pd2}  % this style was created by Thomas Deselaers an Philippe Dreuw
+
+\RequirePackage{tangocolors}
+\selectcolormodel{cmyk}
+\mode<presentation>
+
+% Setting colors
+%\definecolor{falured}{rgb}{0.5, 0.09, 0.09}
+\definecolor{falured}{rgb}{0.66, 0.11, 0.03}
+\definecolor{OIST-Color}{HTML}{ba0025} %b80040 %ba0025
+\definecolor{white}{HTML}{FFFFFF}
+\setbeamercolor{headline}{bg=OIST-Color}
+\setbeamercolor{footline}{fg=tabutter, bg=falured}
+\setbeamerfont{footline}{size=\large,series=\bf}
+\setbeamercolor{separation line}{bg=falured}
+\setbeamercolor{title in headline}{fg=white}
+\setbeamercolor{author in headline}{fg=white}
+\setbeamercolor{institute in headline}{fg=white}
+
+\setbeamercolor{framesubtitle}{fg=white, bg=falured}
+\setbeamercolor{author in head/foot}{fg=white, bg=OIST-Color}
+\setbeamercolor{title in head/foot}{fg=white, bg=OIST-Color}
+
+\setbeamercolor*{normal text}{fg=tachameleon, bg=white}
+\setbeamercolor*{block body}{bg=white,fg=black}
+\setbeamercolor*{block title}{fg=white,bg=OIST-Color}
+\setbeamerfont{block title}{size=\Large,series=\bf}
+\setbeamercolor{upper separation line head}{fg=falured}
+
+\setbeamercolor*{example body}{fg=ta3aluminium,bg=black}
+\setbeamercolor*{example text}{fg=ta3aluminium,bg=black}
+\setbeamercolor*{example title}{bg=white,fg=falured}
+%\setbeamercolor{alerted text}{fg=ta3gray}
+\setbeamercolor{structure}{fg=ta3skyblue}
+
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+% Defining blocks
+\setbeamertemplate{block begin}{
+  \vskip 1ex
+  \begin{beamercolorbox}[rounded=true,ht=3ex,dp=1ex,center,leftskip=-1em,colsep*=-.75ex,wd=.32\paperwidth]{block title}%
+    \usebeamerfont*{block title}%
+    {\phantom{Gg}\insertblocktitle}% phantom because of baseline problem
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-1pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[leftskip=.5em,colsep*=.75ex,sep=0.5ex,vmode,wd=.32\paperwidth]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+
+% Defining headline
+\setbeamertemplate{headline}{  
+  \leavevmode
+
+  \begin{beamercolorbox}[wd=\paperwidth]{headline}
+    \begin{columns}[T]
+      \begin{column}{.15\paperwidth}
+      \end{column}
+      \begin{column}{.7\paperwidth}
+        \vskip4ex
+        \centering
+        \usebeamercolor{title in headline}{\color{fg}\textbf{\LARGE{\inserttitle}}\\[1ex]}
+        \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
+        \usebeamercolor{institute in headline}{\color{fg}\large{\insertinstitute}\\[1ex]}     
+      \end{column}
+      \begin{column}{.15\paperwidth}
+        \vskip2ex
+        \begin{center}
+          \includegraphics[width=0.5\linewidth]{figures/logo2}
+        \end{center}
+        \vskip2ex
+      \end{column}
+      \begin{column}{.02\paperwidth}
+      \end{column}
+    \end{columns}
+    \vskip2ex
+  \end{beamercolorbox}
+
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+    \rule{0pt}{3pt}
+  \end{beamercolorbox}
+   \vskip-5ex
+}
+
+
+% Defining footer
+\setbeamertemplate{footline}{
+  \begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+    \rule{0pt}{3pt}
+  \end{beamercolorbox}
+  
+  \leavevmode%
+  \begin{beamercolorbox}[ht=5ex,leftskip=1em,rightskip=1em]{author in head/foot}%
+    \texttt{\leftfooter}
+    \hfill
+    \texttt{\rightfooter}
+    \vskip1ex
+  \end{beamercolorbox}
+  \vskip0pt%
+  \begin{beamercolorbox}[wd=\paperwidth]{lower separation line foot}
+    \rule{0pt}{3pt}
+  \end{beamercolorbox}
+}
+
+% Display a grid to help align images ... and it looks nice with this color scheme
+%\beamertemplategridbackground[1cm]
+
+
+\mode<all>
+
+% adapt height of itemize rectangles
+\setbeamertemplate{itemize items}[triangle]
+\setbeamertemplate{itemize item}{\raisebox{0.12ex}{$\blacktriangleright$}\hskip0.1em}
+\setbeamertemplate{itemize subitem}{\raisebox{0.12ex}{$\triangleright$}\hskip0.1em}
+% or define your own template using \defbeamertemplate{itemize item}, see beameruserguide.pdf
+
+% equal font sizes for all levels
+\setbeamerfont{itemize/enumerate body}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subbody}{size=\normalsize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\normalsize}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-PDF-mode: t
+%%% TeX-master: "poster-surf"
+%%% End: 
