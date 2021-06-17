@@ -20,10 +20,9 @@
 % Add packages that you need
 \usepackage{amsmath}
 \usepackage{lipsum}  % For dummy test
-\usepackage{multicol} % For multiple columns
-\usepackage{ragged2e}
+\usepackage{ragged2e} % For justifying text
 \usepackage{natbib}
-\usepackage[export]{adjustbox} % vertical-alignment of footer graphics
+\usepackage[export]{adjustbox} % For vertical alignment of footer graphics
 
 % Poster header 
 \title{\huge Biologically-realistic self-supervised pattern tuning by \\somato-dendritic coupling modulation}
@@ -40,7 +39,7 @@
 % Poster
 \begin{document}
 \begin{frame}
-\begin{multicols}{3}
+\begin{columns}[t]
 
 % First  column
 \begin{column}{.325\textwidth}
@@ -71,7 +70,7 @@
     \mathtt{\frac{dV_{d}}{dt} = \frac{ g_{cs} (V_d - V_s) + g_e (V_E - V_d) + g_i (V_I - V_d) + g_{ld} (V_{ld} - V_d)}{C_{d}}} \nonumber
   \end{equation*}
   \begin{equation*}
-    \mathtt{\frac{dV_{s}}{dt} = \frac{ g_{cd} (V_s - V_d) + g_{ls} (V_{ls} - V_d)}{C_{s}}} \nonumber
+    \mathtt{\frac{dV_{s}}{dt} = \frac{ g_{cd} (V_s - V_d) + g_{ls} (V_{ls} - V_s)}{C_{s}}} \nonumber
   \end{equation*}
 \end{center}
   \justify
@@ -150,6 +149,6 @@
 % End of third column
 \end{column}
 
-\end{multicols}
+\end{columns}
 \end{frame}
 \end{document}

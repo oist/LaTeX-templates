@@ -20,8 +20,7 @@
 % Add packages that you need
 \usepackage{amsmath}
 \usepackage{lipsum}  % For dummy test
-\usepackage{multicol} % For multiple columns
-\usepackage{ragged2e}
+\usepackage{ragged2e} % For justifying text
 \usepackage{natbib}
 
 % Poster header 
@@ -37,7 +36,7 @@
 % Poster
 \begin{document}
 \begin{frame}
-\begin{multicols}{3}
+\begin{columns}[t]
 
 % First  column
 \begin{column}{.33\textwidth}
@@ -138,6 +137,6 @@ Here is another equation:
 % End of third column
 \end{column}
 
-\end{multicols}
+\end{columns}
 \end{frame}
 \end{document}
