@@ -11,4 +11,4 @@ Please follow the links below to find the repositories:
 * [OIST presentation](https://github.com/oist/LaTeX-template-OIST-presentation)
 
 All instructions are specified within the templates themselves.
-Contact Jeremie (jeremie.gillet@oist.jp) for any question related to the templates.
+Contact Academic Program Team (academic-programs@oist.jp) for any question related to the templates.
